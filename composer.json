@@ -18,7 +18,8 @@
         "phpunit/phpunit": "^8",
         "kriswallsmith/buzz": "^1.0",
         "nyholm/psr7": "^1.2",
-        "vlucas/phpdotenv": "^3.6"
+        "vlucas/phpdotenv": "^3.6",
+        "friendsofphp/php-cs-fixer": "~2.0"
     },
     "suggest": {
         "kriswallsmith/buzz": "Mailgun API client requires an HTTP client",
@@ -27,6 +28,25 @@
     "autoload": {
         "psr-4": {
             "boundstate\\mailgun\\": "src"
+        }
+    },
+    "scripts": {
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
+        "phpunit": "phpunit --coverage-text",
+        "test": [
+            "@phpunit",
+            "@phpcs"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     }
 }

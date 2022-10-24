@@ -256,6 +256,19 @@ class Message extends BaseMessage
     }
 
     /**
+     * Set custom variable
+     *
+     * @param $variable
+     * @param $value
+     * @return $this
+     */
+    public function setCustomVariable($variable, $value)
+    {
+        $this->getMessageBuilder()->addCustomData($variable, $value);
+        return $this;
+    }
+
+    /**
      * @inheritdoc
      */
     public function toString()
