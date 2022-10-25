@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+        "php": "^7.2 || ^8.0",
         "yiisoft/yii2": ">=2.0.4",
         "mailgun/mailgun-php": "^3"
     },
@@ -18,8 +19,7 @@
         "phpunit/phpunit": "^8",
         "kriswallsmith/buzz": "^1.0",
         "nyholm/psr7": "^1.2",
-        "vlucas/phpdotenv": "^3.6",
-        "friendsofphp/php-cs-fixer": "~2.0"
+        "vlucas/phpdotenv": "^3.6"
     },
     "suggest": {
         "kriswallsmith/buzz": "Mailgun API client requires an HTTP client",
@@ -31,11 +31,9 @@
         }
     },
     "scripts": {
-        "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
         "phpunit": "phpunit --coverage-text",
         "test": [
-            "@phpunit",
-            "@phpcs"
+            "@phpunit"
         ]
     },
     "repositories": [
@@ -47,6 +45,9 @@
     "config": {
         "allow-plugins": {
             "yiisoft/yii2-composer": true
+        },
+        "platform": {
+            "php": "7.2.34"
         }
     }
 }
