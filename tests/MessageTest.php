@@ -38,6 +38,16 @@ final class MessageTest extends TestCase
         );
     }
 
+    public function testGetMessage(): void
+    {
+        $message = Yii::$app->mailer->compose('example', ['name' => 'John'])
+            ->setCustomVariable('variable2', ['key' => 'Data to be returned via webhook payload data']);
+        $this->assertEquals(
+            $message->getMessageBuilder()->getMessage(),
+            $message->getMessage()
+        );
+    }
+
     public function testSingleTo(): void
     {
         $message = Yii::$app->mailer->compose('example', ['name' => 'John'])
