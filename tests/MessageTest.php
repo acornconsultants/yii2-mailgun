@@ -28,10 +28,6 @@ final class MessageTest extends TestCase
         $this->assertEquals('<p>Hi John!</p>', $html);
     }
 
-    /**
-     * @return void
-     * @group failing
-     */
     public function testSettingCustomVariable(): void
     {
         $message = Yii::$app->mailer->compose('example', ['name' => 'John'])
