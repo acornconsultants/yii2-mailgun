@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.2 || ^8.0",
+        "php": "7.2.* || 7.3.*",
         "yiisoft/yii2": ">=2.0.4",
         "mailgun/mailgun-php": "^3"
     },
@@ -47,6 +47,9 @@
     "config": {
         "allow-plugins": {
             "yiisoft/yii2-composer": true
+        },
+        "platform": {
+            "php": "7.2.34"
         }
     }
 }
