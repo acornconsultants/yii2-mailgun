@@ -15,7 +15,7 @@ jobs:
       - php/install-composer
       - run: rm composer-setup.php
       - php/install-packages
-      - run: vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --diff
+#      - run: vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --diff
       - run: vendor/bin/phpunit --verbose
   test_old_php_73:
     docker:
@@ -25,8 +25,9 @@ jobs:
       - run: php --version
       - php/install-composer
       - run: rm composer-setup.php
+      - run: cp .env.example .env
       - php/install-packages
-      - run: vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --diff
+#      - run: vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --diff
       - run: vendor/bin/phpunit --verbose
   test_current:
     parameters:
@@ -42,7 +43,7 @@ jobs:
       - run: rm composer-setup.php
       - run: sudo -E install-php-extensions dom
       - php/install-packages
-      - run: vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --diff
+#      - run: vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --diff
       - run: vendor/bin/phpunit --verbose
 
 workflows:
