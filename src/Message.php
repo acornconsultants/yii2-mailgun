@@ -269,6 +269,14 @@ class Message extends BaseMessage
     }
 
     /**
+     * @return array message object
+     */
+    public function getMessage()
+    {
+        return $this->getMessageBuilder()->getMessage();
+    }
+
+    /**
      * @inheritdoc
      */
     public function toString()

@@ -14,6 +14,12 @@ final class EmailAddressTest extends TestCase
         $this->assertEquals([], $addresses[0]->variables);
     }
 
+    public function testParseNull(): void
+    {
+        $addresses = EmailAddress::parse(null);
+        $this->assertEquals([], $addresses);
+    }
+
     public function testParseSimpleArray(): void
     {
         $addresses = EmailAddress::parse(['jake@example.com', 'sally@example.com']);
