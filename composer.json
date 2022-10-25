@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+        "php": "^7.2 || ^8.0",
         "yiisoft/yii2": ">=2.0.4",
         "mailgun/mailgun-php": "^3"
     },
