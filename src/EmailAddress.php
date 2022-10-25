@@ -15,6 +15,9 @@ class EmailAddress
      */
     static function parse($input) {
         if (!is_array($input)) {
+            if (is_null($input)) {
+                return [];
+            }
             return [new EmailAddress($input)];
         }
 
